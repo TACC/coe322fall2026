@@ -1,0 +1,35 @@
+================================================================
+
+Use the TAB key!
+Type the first couple of characters of a file name, then hit TAB.
+
+================================================================
+
+If you need to execute a previous command again, say
+
+  emacs myprogram.cpp
+
+then you can repeat that with
+
+  !em
+
+meaning: repeated the previous command that started with "em".
+
+If you're unsure if "!em" will retrieve the correct command,
+display it with
+
+  !em:p
+
+and if it was the right one, do
+
+  !!
+
+which means "repeat the last command".
+
+================================================================
+
+Learn a Unix editor!
+
+Your instructor prefers "emacs", but "vi" or "vim" is another popular choice.
+
+================================================================
