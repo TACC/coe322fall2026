@@ -33,3 +33,9 @@ Learn a Unix editor!
 Your instructor prefers "emacs", but "vi" or "vim" is another popular choice.
 
 ================================================================
+
+Add this line to the end of ~/.bashrc :
+
+export PS1="[\h \W:\#] "
+
+to get a more informative prompt.
