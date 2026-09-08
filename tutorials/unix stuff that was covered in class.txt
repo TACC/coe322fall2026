@@ -39,3 +39,21 @@ Add this line to the end of ~/.bashrc :
 export PS1="[\h \W:\#] "
 
 to get a more informative prompt.
+
+================================================================
+
+Instead of "cd somedir", do:
+
+pushd somedir
+
+This will remember the currently directory, and you can switch
+between the current dir and somedir with
+
+pushd
+
+(without arguments)
+
+If you only made a temporary excursion to somedir,
+you can forget about it again with
+
+popd
