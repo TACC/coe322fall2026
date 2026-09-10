@@ -1,0 +1,79 @@
+==== Variables
+
+Set a variable:
+
+myvar=12
+
+or
+
+myvar="some text"
+
+Get the value:
+echo $myvar
+
+==== Conditionals
+
+Test on strings:
+
+if [ $myvar = "another text" ] ; then echo "yes" ; else echo "no" ; fi
+
+or
+
+if [ $myvar = "another text" ] ; then
+    echo "yes" 
+else
+    echo "no"
+fi
+
+Test on numbers:
+
+if [ $myvar -gt 5 ] ; then echo "greater" ...stuff...
+
+with -eq -ne -gt -lt -ge -le
+
+Test existence of file and directory:
+
+if [ -f $myfilename ] ....
+if [ -d $mydirname ] ...
+
+==== Loops
+
+Loops range over a set of strings:
+
+for x in 1 2 four five ; do echo $x ; done
+
+(can be broken over lines)
+
+Range of numbers:
+
+for x in {5..10} ; do ....
+
+==== Programs:
+
+Make file something.sh:
+
+#!/bin/bash
+... shell commands...
+... shell commands...
+
+where the first line is required; Black Magic
+
+This file needs to be executable:
+
+chmod +x something.sh
+
+and execute it with
+
+./something.sh
+
+==== Execution order:
+
+This does not work:
+
+for x in cat input_values ; do ...
+
+Force evaluation of the cat:
+
+for x in $( cat input_values ) ; do ...
+
+
