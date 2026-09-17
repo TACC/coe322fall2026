@@ -1,0 +1,10 @@
+More emacs
+
+C-x C-f : find file (for editing)
+C-x C-w : write under another name
+C-x i : insert another file here
+
+C-g : abort
+C-x u : undo
+
+ESC x replace-string : replace string. duh.
