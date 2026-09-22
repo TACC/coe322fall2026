@@ -1,6 +1,9 @@
 #include "myfunction.hpp"
 
+#include <print>
+
 int main() {
+  std::println("foo");
   return f(5);
 }
 

@@ -17,6 +17,7 @@ rm -rf build
 mkdir build
 cd build
 pwd
-CXX=icpx cmake ../$1
-make
+CXX=icpx cmake -D CMAKE_VERBOSE_MAKEFILE=ON  ../$1
+make V=1
+
 
