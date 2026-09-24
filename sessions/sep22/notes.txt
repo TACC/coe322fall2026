@@ -1,0 +1,16 @@
+================ More emacs
+
+C-x C-f : can also edit a directory.
+do 'd' for mark for delete
+do 'x' for execute deletes
+
+================ CMake
+
+To get more output (which can help you debugging a problem):
+
+1. add a CMake option
+cmake -D CMAKE_VERBOSE_MAKEFILE=ON
+2. add a Make option
+make V=1
+
+(this is in the cmakebuild.sh)
