@@ -7,8 +7,9 @@ public:
   // constructor:
   // same name as the class
   // no return type
-  Point(float in_x,float in_y) {
-    x = in_x; y= in_y; };
+  Point(float in_x,float in_y)
+    : x(in_x),y(in_y) {};
+
   // scaling function
   // function name "scale"
   // input parameter "a"
@@ -17,6 +18,7 @@ public:
     Point scaledpoint(x*a,y*a);
     return scaledpoint;
   };
+
   // stuff from last time
   float distance_to_origin() {
     return sqrt( x*x + y*y );
