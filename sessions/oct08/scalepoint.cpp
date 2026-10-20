@@ -1,12 +1,13 @@
+#include <print>
+#include <format>
+#include <string>
+
 #include <cmath>
 
 class Point {
 private:
   float x,y;
 public:
-  // accessors, not always needed
-  float getx() { return x;};
-  float gety() { return y;};
 
   // constructor:
   // same name as the class
@@ -48,18 +49,22 @@ public:
   Point halfway(Point q) {
     return (*this+q)*.5; // wrong
   }
+  std::string as_string() const {
+    return std::format("({},{})",x,y);
+  };
 };
 
-// template<>
-// class std::formatter<Point>{
-// public:
-//   constexpr auto parse( std::format_parse_context& ctx ) {
-//     return ctx.begin(); };
-//   auto format( const Point& z,std::format_context& ctx ) const {
-//     return std::format_to
-//       ( ctx.out(),"({},{})",z.getx(),z.gety());
-//   };
-// };
+template<>
+class std::formatter<Point>{
+public:
+  constexpr auto parse( std::format_parse_context& ctx ) {
+    return ctx.begin(); };
+  auto format( const Point& z,std::format_context& ctx ) const {
+    return std::format_to
+      ( ctx.out(),"{}",z.as_string()
+	);
+  };
+};
 
 int main() {
   Point p1(1.0,1.0);
@@ -75,6 +80,7 @@ int main() {
   p3 = p1.halfway(p2);
 
   Point h = (p1+p2)*.5f;
+  std::println("Halfway between {} and {} is {}",p1,p2,h);
   Point k = p1.halfway(h);
 
   return 0;
