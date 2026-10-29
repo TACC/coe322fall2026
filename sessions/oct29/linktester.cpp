@@ -19,6 +19,5 @@ TEST_CASE( "empty list has length zero" ) {
 TEST_CASE( "inserting one element gives length 1" ) {
   List mylist;
   mylist.insert(5);
-  REQUIRE_THROWS( mylist.length() );
-  //  REQUIRE( mylist.length()==1 );
+  REQUIRE( mylist.length()==1 );
 }
