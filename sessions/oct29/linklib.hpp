@@ -9,6 +9,12 @@ private:
   shared_ptr<Node> next{nullptr};
 public:
   Node( int v ) : value(v) {};
+  int length() {
+    if (next==nullptr)
+      return 1;
+    else
+      return 1+next->length();
+  };
 };
 
 class List {
@@ -29,8 +35,7 @@ public:
     if (head==nullptr)
       return 0 ;
     else
-      throw( "Can not compute length of non-empty list" );
-      // return head->length();
+      return head->length();
   };
 };
   
