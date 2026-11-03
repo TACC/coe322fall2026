@@ -9,6 +9,9 @@ private:
   shared_ptr<Node> next{nullptr};
 public:
   Node( int v ) : value(v) {};
+  bool contains_value(int val) {
+    /* stuff */
+  };
   int length() {
     if (next==nullptr)
       return 1;
@@ -25,14 +28,21 @@ private:
 public:
   // this is better than: List() {}
   List() = default;
+  bool empty() { return head==nullptr; };
   void insert( int value ) {
-    if (head==nullptr)
+    if (empty())
       head = make_shared<Node>(value);
     else
       throw("I do not know how to insert in a non-empty list");
   };
+  bool contains_value(int val) {
+    if (empty())
+      return false;
+    else
+      return head->contains_value(val);
+  };
   int length() {
-    if (head==nullptr)
+    if (empty())
       return 0 ;
     else
       return head->length();
