@@ -14,7 +14,11 @@ int main() {
 		rng::views::iota(2,n),
 		is_divisor
 		 );
-  };
+  }; // end of the `isprime' lambda
+
+  // lambda used by itself:
+  // isprime(27)
+  // however, that's not how you solve this exercise.
 
   return 0;
 
